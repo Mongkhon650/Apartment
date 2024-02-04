@@ -16,81 +16,99 @@
 
 
 -- Dumping database structure for drom
-CREATE DATABASE IF NOT EXISTS `drom` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci */;
+CREATE DATABASE IF NOT EXISTS `drom` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci */;
 USE `drom`;
 
--- Dumping structure for table drom.booking
-CREATE TABLE IF NOT EXISTS `booking` (
-  `Booking_ID` int(11) NOT NULL AUTO_INCREMENT,
-  `user_ID` int(11) NOT NULL,
-  `dormitory_ID` int(11) NOT NULL,
-  `BookingDate` date NOT NULL,
-  `room_ID` int(11) NOT NULL,
-  PRIMARY KEY (`Booking_ID`),
-  KEY `user_ID` (`user_ID`),
-  KEY `dormitory_ID` (`dormitory_ID`),
-  KEY `room_ID` (`room_ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+-- Dumping structure for table drom.addmin
+CREATE TABLE IF NOT EXISTS `addmin` (
+  `addmin_ID` varchar(255) DEFAULT NULL,
+  `add_pass` varchar(255) DEFAULT NULL,
+  `addmin_name` varchar(255) DEFAULT NULL,
+  `post_I` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table drom.booking: ~0 rows (approximately)
+-- Dumping data for table drom.addmin: ~0 rows (approximately)
 
--- Dumping structure for table drom.dromitory
-CREATE TABLE IF NOT EXISTS `dromitory` (
-  `dromitory_ID` int(11) NOT NULL AUTO_INCREMENT,
-  `dromitoryName` varchar(50) NOT NULL,
-  `dromitoryAddress` varchar(255) NOT NULL,
-  `Contact` varchar(150) NOT NULL,
-  `distantUP` int(11) NOT NULL,
-  `detail` varchar(255) DEFAULT NULL,
-  `dromitoryType` varchar(100) NOT NULL,
-  PRIMARY KEY (`dromitory_ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+-- Dumping structure for table drom.drom
+CREATE TABLE IF NOT EXISTS `drom` (
+  `dromID` varchar(255) NOT NULL,
+  `dromName` varchar(255) DEFAULT NULL,
+  `dromAddress` varchar(255) DEFAULT NULL,
+  `dromPhone` varchar(255) DEFAULT NULL,
+  `dromDistan` varchar(255) DEFAULT NULL,
+  `billElec` varchar(255) DEFAULT NULL,
+  `billwater` varchar(255) DEFAULT NULL,
+  `dromAddidtonal` varchar(255) DEFAULT NULL,
+  `photoID` int(11) DEFAULT NULL,
+  `reviewID` int(11) DEFAULT NULL,
+  PRIMARY KEY (`dromID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table drom.dromitory: ~0 rows (approximately)
+-- Dumping data for table drom.drom: ~10 rows (approximately)
+REPLACE INTO `drom` (`dromID`, `dromName`, `dromAddress`, `dromPhone`, `dromDistan`, `billElec`, `billwater`, `dromAddidtonal`, `photoID`, `reviewID`) VALUES
+	('1', 'คอนโดมอล', NULL, '064-5967 928', '1 km.', '4.5/หน่วย', '0', NULL, 0, 0),
+	('10', 'ทาเคดะ', NULL, '081 0276 247', '600 m.', '7/หน่วย', '100/คน/เดือน', NULL, 0, 0),
+	('2', 'พี เอ็น เรสซิเด้นท์', NULL, '065-4728 855', '1 km.', '8/หน่วย', '150/เดือน', '-', 0, 0),
+	('3', 'การ์เดน โฮม', NULL, '081 9804 436', '1.2 km.', '7/หน่วย', '50/คน/เดือน', NULL, 0, 0),
+	('4', 'พูลสุข', NULL, '084 6229 515', '3.2 km.', '8/หน่วย', '60/คน/เดือน', NULL, 0, 0),
+	('5', 'คุณราตรี', NULL, '084 6618 905', '1.3  km.', '7/หน่วย', '100/คน/เดือน', NULL, 0, 0),
+	('6', 'เกษร 3', NULL, '082 9853 519', '1.2 km', '6/หน่วย', '0', NULL, 0, 0),
+	('7', 'วชิรา', NULL, '0931805 227', '1.8 km.', '8/หน่วย', '100/เดือน', NULL, 0, 0),
+	('8', 'พาณิภัค', NULL, '081 9513 309', '3.3 km.', '8/หน่วย', '50/เดือน', NULL, 0, 0),
+	('9', 'วิโรจน์วิวสวย', NULL, '099 1846 358', '1.1 km.', '7/หน่วย', '80/คน/เดือน', NULL, 0, 0);
 
--- Dumping structure for table drom.landlord
-CREATE TABLE IF NOT EXISTS `landlord` (
-  `landlord_ID` int(11) NOT NULL AUTO_INCREMENT,
-  `username_l` varchar(30) NOT NULL,
-  `PASSWORD_l` varchar(30) NOT NULL,
-  `nameuser_l` varchar(50) NOT NULL,
-  `dromitory_ID` int(11) NOT NULL,
-  `contact_l` varchar(255) NOT NULL,
-  PRIMARY KEY (`landlord_ID`),
-  KEY `dromitory_ID` (`dromitory_ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+-- Dumping structure for table drom.landlond
+CREATE TABLE IF NOT EXISTS `landlond` (
+  `landlond_ID` varchar(255) DEFAULT NULL,
+  `password_l` varchar(255) DEFAULT NULL,
+  `landlod_name` varchar(255) DEFAULT NULL,
+  `drom_I` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table drom.landlord: ~0 rows (approximately)
+-- Dumping data for table drom.landlond: ~0 rows (approximately)
 
--- Dumping structure for table drom.room
-CREATE TABLE IF NOT EXISTS `room` (
-  `room_ID` int(11) NOT NULL AUTO_INCREMENT,
-  `dromitory_ID` int(11) NOT NULL,
-  `roomNumber` varchar(400) NOT NULL,
-  `roomPrice` int(11) NOT NULL,
-  `roomStatus` varchar(50) NOT NULL,
-  `roomType` varchar(255) NOT NULL,
-  `roomDetail` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`room_ID`),
-  KEY `dromitory_ID` (`dromitory_ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+-- Dumping structure for table drom.photo
+CREATE TABLE IF NOT EXISTS `photo` (
+  `photoID` int(11) DEFAULT NULL,
+  `Pic` mediumtext DEFAULT NULL,
+  `dromID` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table drom.room: ~0 rows (approximately)
+-- Dumping data for table drom.photo: ~0 rows (approximately)
+
+-- Dumping structure for table drom.post
+CREATE TABLE IF NOT EXISTS `post` (
+  `post_ID` varchar(255) DEFAULT NULL,
+  `user_I` varchar(255) DEFAULT NULL,
+  `landlond_I` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Dumping data for table drom.post: ~0 rows (approximately)
+
+-- Dumping structure for table drom.review
+CREATE TABLE IF NOT EXISTS `review` (
+  `reviewID` int(11) DEFAULT NULL,
+  `star` varchar(255) DEFAULT NULL,
+  `comment` varchar(255) DEFAULT NULL,
+  `reviewDate` datetime DEFAULT NULL,
+  `dromID` int(11) DEFAULT NULL,
+  `reviwePeple` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Dumping data for table drom.review: ~2 rows (approximately)
+REPLACE INTO `review` (`reviewID`, `star`, `comment`, `reviewDate`, `dromID`, `reviwePeple`) VALUES
+	(0, NULL, NULL, NULL, 0, 0),
+	(12, NULL, NULL, NULL, 0, 0);
 
 -- Dumping structure for table drom.user
 CREATE TABLE IF NOT EXISTS `user` (
-  `user_ID` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(30) NOT NULL,
-  `PASSWORD` varchar(30) NOT NULL,
-  `nameuser` varchar(50) NOT NULL,
-  `userContact` varchar(255) NOT NULL,
-  `userBooking` varchar(255) NOT NULL,
-  PRIMARY KEY (`user_ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `User_ID` varchar(255) DEFAULT NULL,
+  `User_name` varchar(255) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `review_I` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table drom.user: ~1 rows (approximately)
-REPLACE INTO `user` (`user_ID`, `username`, `PASSWORD`, `nameuser`, `userContact`, `userBooking`) VALUES
-	(1, 'Johny123', '1234', 'John', '', '');
+-- Dumping data for table drom.user: ~0 rows (approximately)
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
