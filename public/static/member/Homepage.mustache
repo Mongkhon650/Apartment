@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <!-- This link make HTML gripping -->
+    <link rel="stylesheet" href="/CSSFILE/bootstrap.min.css">
+    <link rel="stylesheet" href="/CSSFILE/homepage.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Pridi:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="/JSFILE/Homepage.js"></script>
+</head>
+<body>
+    <!-- Top Structure | โครงสร้างด้านบนที่มีการล็อกอิน ค้นหา กรอง และโลโก้ -->
+    <div class="row bg-purple p-2"> 
+        <div class="col-1 center">
+            <!-- Logo -->
+            <img src="/img/Apartment_Logo.png" width="95%" height="95%">
+        </div>
+        <div class="col-8 center">
+            <h3><b>Phayao Apartment</b></h3>
+        </div>
+        <div class="col-1 center" style="position: relative;">
+            <!-- Login Button -->
+            <button class="login-button" onclick="window.location.href='/member/login'">Login</button>
+            
+        </div>
+        <div class="col-2 center">
+            <!-- Register -->
+            <button class="login-button" onclick="window.location.href='/member/register'">Register</button>
+        </div>
+    </div>
+    <div class="aside">
+        <div class="row center position-relative ">
+            <input class="search center" type="text" placeholder="ค้นหา">
+        </div>
+        <div>
+            <ul style="list-style-type: none;" class="fixed-width-2"> <h5>ประเภทหอพัก</h5>
+                <li><span class="fixed-width">บ้านเดี่ยว</span></li>
+                <li><span class="fixed-width">บ้านแฝด</span></li>
+                <li><span class="fixed-width">คอนโด</span></li>
+                <li><span class="fixed-width">อพาร์ทเม้นท์</span></li>
+            </ul>
+            <ul style="list-style-type: none;" class="fixed-width-2"> <h5>ชนิดหอพัก</h5>
+                <li><span class="fixed-width">หอพักชาย</span></li>
+                <li><span class="fixed-width">หอพักหญิง</span></li>
+                <li><span class="fixed-width">หอพักรวม</span></li>
+            </ul>
+            <ul style="list-style-type: none;" class="fixed-width-2"> <h5>ราคา</h5>
+                <li><span class="fixed-width">1,500 - 2,000 บาท</span></li>
+                <li><span class="fixed-width">2,001 - 3,000 บาท</span></li>
+                <li><span class="fixed-width">3,001 - 4,000 บาท</span></li>
+                <li><span class="fixed-width">4,001 - 5,000 บาท</span></li>
+                <li><span class="fixed-width">5,001 - 6,000 บาท</span></li>
+                <li><span class="fixed-width">6,001 - 7,000 บาท</span></li>
+                <li><span class="fixed-width">7,001 - 8,000 บาท</span></li>
+            </ul>
+            <ul style="list-style-type: none;" class="fixed-width-2"> <h5>ระยะทาง</h5>
+                <li><span class="fixed-width">0 - 100 เมตร</span></li>
+                <li><span class="fixed-width">101 - 200 เมตร</span></li>
+                <li><span class="fixed-width">201 - 300 เมตร</span></li>
+                <li><span class="fixed-width">301 - 400 เมตร</span></li>
+                <li><span class="fixed-width">401 - 500 เมตร</span></li>
+                <li><span class="fixed-width">501 - 1 กิโลเมตร</span></li>
+                <li><span class="fixed-width">1 - 1.5 กิโลเมตรเมตร</span></li>
+                <li><span class="fixed-width">101 - 200 เมตร</span></li>
+                <li><span class="fixed-width">101 - 200 เมตร</span></li>
+                <li><span class="fixed-width">101 - 200 เมตร</span></li>
+                <li><span class="fixed-width">101 - 200 เมตร</span></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

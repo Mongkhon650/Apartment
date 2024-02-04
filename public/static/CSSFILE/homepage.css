@@ -1,0 +1,120 @@
+/* this class make background color is purple (#CB6CE6) */
+.bg-purple{
+    background-color: #CB6CE6;
+}
+
+/* make body use this font */
+body{
+    font-family: 'Pridi', serif;
+    overflow-x: hidden;
+}
+
+/* Search system */
+.search{
+    background-image: url('/img/search-icon.png');
+    background-repeat: no-repeat;
+    background-position: calc(100% - 10px) center;
+    background-size: 30px 30px;
+    margin: 20px 0;
+    width: 80%;
+    height: 50%;
+    text-align: center;
+    background-color: white;
+    border-radius: 15px;
+    border: none;
+}
+
+/* make text center structure */
+.center{
+    display: flex;
+    align-items: center;
+    justify-self: center;
+}
+
+/* make button gripping */
+button{
+    border-radius: 15px;
+    /* border: none; */
+    background-color: #CB6CE6;
+    color: black;
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+/* This id is window for login form */
+#loginForm {
+    display: none;
+    position: absolute;
+    top: 100%;
+    margin-top: 10px;
+    width: 250px;
+    padding: 15px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    background-color: #CB6CE6;
+}
+
+/* make input gripping */
+input{
+    border-radius: 7px;
+    border: none;
+    background-color: white;
+}
+
+#profile{
+    width: 50px; /* Adjust this to fit the size of one character */
+    height: 50px; /* Adjust this to fit the size of one character */
+    line-height: 50px; /* Adjust this to fit the size of one character */
+    text-align: center; /*Center the character horizontally */
+    border: 1px solid gray; /* Change the border color to gray */
+    border-radius: 50%; /* Make the profile picture round */
+    background-color: white;
+}
+
+#profileBlock {
+    position: absolute;
+    top: 100%;
+    right: 180px;
+    margin-top: 10px;
+    width: 200px;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #CB6CE6;
+}
+
+#filterBox   {
+    position: absolute;
+    top: 100%;
+    right: 180px;
+    margin-top: 10px;
+    width: 200px;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #CB6CE6;
+}
+
+.aside {
+    text-align: center;
+    border: 1px solid black;
+    /* background-color: aliceblue; */
+    float: left;
+    width: 20%;
+    height: 100vh;
+    padding: 20px;
+}
+
+.fixed-width{
+    width: 150px;
+    text-align: left;
+    display: inline-block;
+    margin-left: 10%;
+}
+.fixed-width-2{
+    width: 100%;
+    text-align: left;
+    display: inline-block;
+}

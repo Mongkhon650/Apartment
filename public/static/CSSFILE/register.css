@@ -1,0 +1,36 @@
+body {
+    background-color: #fff;
+  }
+  
+  .form {
+    width: 500px;
+    margin: 0 auto;
+  }
+  
+  .input-group {
+    margin-bottom: 10px;
+  }
+  
+  label {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  button {
+    background-color: #CB6CE6;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .name-group {
+    display: flex;
+    justify-content: space-between;
+  }
