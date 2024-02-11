@@ -6,7 +6,6 @@ const mysql = require("mysql2");
 const cookie = require("cookie-parser");
 const md5 = require("md5");
 
-
 const pool = mysql.createPool({
   user: process.env.DB_USER,
   host: process.env.DB_HOST,
@@ -28,8 +27,8 @@ router.use((req, res, next) => {
 function renderDorm(dorm) {
   return `
     <div class="row dorm dorms">
-        <div class="col-3">
-            <img src="/img/dorm.jpg" width="100" height="100%" style="border-radius: 20px; object-fit: cover;">
+        <div class="col-2">
+            <img src="/image/${dorm.dorm_id}">
         </div>
         <div class="col-9" style="border-radius: 20px;">
             <div class="row m-lg-3">
@@ -97,7 +96,7 @@ router.get("/homepage", (req, res) => {
   if (req.cookies.username) {
     res.redirect("/member");
   } else {
-    const sql = `SELECT dormName, dormDistan, rate_price FROM dorm`;
+    const sql = `SELECT dorm.dorm_id, dorm.dormName, dorm.dormDistan, dorm.rate_price, photo.picture FROM dorm LEFT JOIN photo ON dorm.dorm_id = photo.dorm_id`;
     pool.query(sql, (err, result) => {
       if (err) {
         console.log(err);
@@ -107,6 +106,7 @@ router.get("/homepage", (req, res) => {
         const dorms = result.map((dorm) => ({
           ...dorm,
           dormDistan: dorm.dormDistan / 1000,
+          picture: `/image/${dorm.id}`,
         }));
         // ส่งข้อมูลไปยังเทมเพลต
         const dormsHTML = dorms.map(renderDorm).join("");
@@ -156,7 +156,7 @@ router.get("/member", (req, res) => {
     return;
   }
 
-  const sql = `SELECT dormName, dormDistan, rate_price FROM dorm`;
+  const sql = `SELECT dorm.dorm_id, dorm.dormName, dorm.dormDistan, dorm.rate_price, photo.picture FROM dorm LEFT JOIN photo ON dorm.dorm_id = photo.dorm_id`;
   pool.query(sql, (err, result) => {
     if (err) {
       console.log(err);
@@ -166,6 +166,7 @@ router.get("/member", (req, res) => {
       const dorms = result.map((dorm) => ({
         ...dorm,
         dormDistan: dorm.dormDistan / 1000,
+        picture: `/image/${dorm.id}`,
       }));
       // ส่งข้อมูลไปยังเทมเพลต
       const dormsHTML = dorms.map(renderDorm).join("");
@@ -188,7 +189,7 @@ router.get("/logout", (req, res) => {
 //ค้นหาหอพัก
 router.get("/search", (req, res) => {
   const query = req.query.query;
-  const sql = `SELECT dormName, dormDistan, rate_price FROM dorm WHERE dormName LIKE ?`;
+  const sql = `SELECT dorm.dorm_id, dorm.dormName, dorm.dormDistan, dorm.rate_price, photo.picture FROM dorm LEFT JOIN photo ON dorm.dorm_id = photo.dorm_id WHERE dorm.dormName LIKE ?`;
   pool.query(sql, [`${query}%`], (err, result) => {
     if (err) {
       console.log(err);
@@ -197,6 +198,7 @@ router.get("/search", (req, res) => {
       const dorms = result.map((dorm) => ({
         ...dorm,
         dormDistan: dorm.dormDistan / 1000,
+        picture: `/image/${dorm.id}`,
       }));
       const dormsHTML = dorms.map(renderDorm).join("");
       // ตรวจสอบว่าผู้ใช้ล็อกอินหรือไม่
@@ -214,6 +216,23 @@ router.get("/search", (req, res) => {
         // ถ้ายังไม่ได้ล็อกอิน, ส่งผู้ใช้ไปยัง 'homepage'
         res.render("member/homepage", { dorms: dormsHTML, query });
       }
+    }
+  });
+});
+
+// ส่งรูปภาพไปยังเทมเพลต
+router.get("/image/:id", (req, res) => {
+  const sql = "SELECT picture FROM photo WHERE dorm_id = ?";
+  pool.query(sql, [req.params.id], (err, results) => {
+    if (err) {
+      console.error(err);
+      return;
+    }
+    if (results.length > 0) {
+      res.writeHead(200, { "Content-Type": "image/jpeg" });
+      res.end(results[0].picture, "binary");
+    } else {
+      res.status(404).send("No image found for this dorm");
     }
   });
 });

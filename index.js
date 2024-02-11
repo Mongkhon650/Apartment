@@ -6,12 +6,14 @@ const me = require('mustache-express');
 const app = express();
 const port = 3000;
 
+
 app.set('views', path.join(__dirname, '/static'));
 app.set('view engine', 'mustache');
 app.engine('mustache', me());
 
 require('dotenv').config();
 
+app.use('/img', express.static('static/img'));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
