@@ -30,3 +30,9 @@ function toggleProfileBlock() {
         x.style.display = "none";
     }
 }
+
+window.onload = function() {
+    if (isLandlord) {
+      document.getElementById('postDorm').style.display = 'block';
+    }
+}

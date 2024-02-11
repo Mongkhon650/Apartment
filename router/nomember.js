@@ -143,6 +143,11 @@ router.post("/login", (req, res) => {
           secure: true,
           httpOnly: true,
         });
+        res.cookie("isLandlord", result[0].is_landlord, {
+          maxAge: 900000,
+          secure: true,
+          httpOnly: true,
+        });
         res.redirect("/member");
       }
     }
@@ -172,7 +177,8 @@ router.get("/member", (req, res) => {
       const dormsHTML = dorms.map(renderDorm).join("");
       const username = req.cookies.username;
       const firstChar = username.charAt(0);
-      res.render("member/member", { dorms: dormsHTML, username, firstChar });
+      const isLandlord = req.cookies.isLandlord === '1';
+      res.render("member/member", { dorms: dormsHTML, username, firstChar, isLandlord });
     }
   });
 });

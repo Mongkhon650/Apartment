@@ -20,7 +20,14 @@
         <div class="col-3 center">
             <h3><b>Phayao Apartment</b></h3>
         </div>
-        <div class="col-6 center">
+        <div class="col-5 center">
+        </div>
+        <div class="col-1 center">
+            {{#isLandlord }}
+                <button class="buttn">โพสต์</button>
+            {{/isLandlord }}
+        </div>
+        <div class="col-1 center">
             <button class="buttn">ช่วยเหลือ</button>
         </div>
         <div class="col-1 center" style="position: relative;">
@@ -66,5 +73,6 @@
     <!-- dorm -->
     {{{dorms}}}
     <script src="/JSFILE/loginmember.js"></script>
+    <script>var isLandlord = {{isLandlord}};</script>
 </body>
 </html>
