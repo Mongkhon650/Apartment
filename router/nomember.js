@@ -260,16 +260,18 @@ router.get("/image/:id", (req, res) => {
   });
 });
 
-router.get("/post", (req, res) => {
-  res.render("member/post");
+router.get('/detaildorm', checkAuthenticated, (req, res) => {
+  res.render('detaildormmember.mustache');
 });
 
-router.get("/detaildorm", (req, res) => {
-  res.render("member/detaildorm");
+router.get('/detaildorm', checkNotAuthenticated, (req, res) => {
+  res.render('detaildorm.mustache');
 });
 
 router.get("/review", (req, res) => {
   res.render("member/review");
 });
+
+
 
 module.exports = router;
