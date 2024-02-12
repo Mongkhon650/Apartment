@@ -24,7 +24,7 @@
         </div>
         <div class="col-1 center">
             {{#isLandlord }}
-                <button class="buttn">โพสต์</button>
+                <button class="buttn" onclick="window.location.href='/post'">โพสต์</button>
             {{/isLandlord }}
         </div>
         <div class="col-1 center">
@@ -46,30 +46,30 @@
             <div class="row center position-relative ">
                 <input class="search center" type="text" name="query" value="{{query}}" placeholder="ค้นหา" style="margin-left: 20px;">
             </div>
+            <div>
+                <ul style="list-style-type: none;" class="fixed-width-2"> <h5>ประเภทหอพัก</h5>
+                    <li class="checkbox-label"><input type="checkbox" name="dormitory_type[]" value="1"><span class="fixed-width">บ้านเดี่ยว</span></li>
+                    <li class="checkbox-label"><input type="checkbox" name="dormitory_type[]" value="2"><span class="fixed-width">บ้านแฝด</span></li>
+                    <li class="checkbox-label"><input type="checkbox" name="dormitory_type[]" value="3"><span class="fixed-width">คอนโด</span></li>
+                    <li class="checkbox-label"><input type="checkbox" name="dormitory_type[]" value="4"><span class="fixed-width">อพาร์ทเม้นท์</span></li>
+                </ul>
+                <ul style="list-style-type: none;" class="fixed-width-2"> <h5>ชนิดหอพัก</h5>
+                    <li class="checkbox-label"><input type="checkbox" name="dorm_type[]" value="1"><span class="fixed-width">หอพักชาย</span></li>
+                    <li class="checkbox-label"><input type="checkbox" name="dorm_type[]" value="2"><span class="fixed-width">หอพักหญิง</span></li>
+                    <li class="checkbox-label"><input type="checkbox" name="dorm_type[]" value="3"><span class="fixed-width">หอพักรวม</span></li>
+                </ul>
+                <ul style="list-style-type: none;" class="fixed-width-2"> <h5>ราคา :</h5>
+                    <input type="range" id="price" name="price" min="1500" max="8000" step="500" oninput="updatePrice(value)">
+                    <p id="priceValue"></p>
+                </ul>
+                <ul style="list-style-type: none;" class="fixed-width-2"> <h5>ระยะทาง</h5>
+                    <input type="range" id="price" name="price" min="0" max="5000" step="100" oninput="updateDistance(value)">
+                    <p id="distanceValue"></p>
+                </ul>
+                <button class="in" type="submit">ค้นหา</button>
+            </div>
         </form>
-        <div>
-            <ul style="list-style-type: none;" class="fixed-width-2"> <h5>ประเภทหอพัก</h5>
-                <li><span class="fixed-width">บ้านเดี่ยว</span></li>
-                <li><span class="fixed-width">บ้านแฝด</span></li>
-                <li><span class="fixed-width">คอนโด</span></li>
-                <li><span class="fixed-width">อพาร์ทเม้นท์</span></li>
-            </ul>
-            <ul style="list-style-type: none;" class="fixed-width-2"> <h5>ชนิดหอพัก</h5>
-                <li><span class="fixed-width">หอพักชาย</span></li>
-                <li><span class="fixed-width">หอพักหญิง</span></li>
-                <li><span class="fixed-width">หอพักรวม</span></li>
-            </ul>
-            <ul style="list-style-type: none;" class="fixed-width-2"> <h5>ราคา :</h5>
-                <input type="range" id="price" name="price" min="1500" max="8000" step="500" oninput="updatePrice(value)">
-                <p id="priceValue"></p>
-            </ul>
-            <ul style="list-style-type: none;" class="fixed-width-2"> <h5>ระยะทาง</h5>
-                <input type="range" id="price" name="price" min="0" max="5000" step="100" oninput="updateDistance(value)">
-                <p id="distanceValue"></p>
-            </ul>
-        </div>
     </div>  
-    
     <!-- dorm -->
     {{{dorms}}}
     <script src="/JSFILE/loginmember.js"></script>

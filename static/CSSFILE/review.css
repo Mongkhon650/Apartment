@@ -1,0 +1,127 @@
+body {
+    font-family: 'Pridi', serif;
+    overflow-x: hidden;
+    background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #060505;
+    border-radius: 4px;
+
+    #rating-stars {
+        display: inline-block;
+        cursor: pointer;
+    }
+
+
+}
+
+.half {
+    display: flex;
+    align-items: center;
+    width: 45%;
+    /* Adjust this value as needed */
+    padding: 0 2.5%;
+    /* Adjust these values as needed */
+}
+
+.button {
+    background: none;
+    border: 2px solid black;
+    padding: 5px 0px;
+    /* Adjust these values as needed */
+    min-width: 100px;
+    /* Adjust this value as needed */
+    min-height: 100px;
+    /* Adjust this value as needed */
+}
+
+textarea {
+    border: 2px solid black;
+    border-radius: 7px;
+    background-color: white;
+    width: 100%;
+}
+
+.cont {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.cont h4 {
+    margin-inline-end: 100px;
+}
+
+.cont button {
+    background: none;
+    border: 1px solid black;
+    padding: 5px 5px;
+    /* Adjust these values as needed */
+    min-width: 70px;
+    /* Adjust this value as needed */
+    min-height: 70px;
+}
+
+.header h2 {
+    text-align: center;
+    border: 1px solid #000;
+    /* เปลี่ยนสีตามที่คุณต้องการ */
+    display: inline-block;
+    padding: 10px;
+    /* เพิ่มพื้นที่ภายในกรอบ */
+    width: 100%;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header button {
+    padding: 20px 30px;
+    /* ปรับขนาดของ padding ให้เหมาะสมกับความต้องการของคุณ */
+    font-size: 24px;
+    /* ปรับขนาดของตัวอักษรให้เหมาะสมกับความต้องการของคุณ */
+    margin: 10px;
+}
+
+.comment {
+    text-align: justify;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    margin-top: 20px;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+.progress {
+    height: 20px;
+    margin-bottom: 20px;
+}
+
+.card {
+    margin-bottom: 20px;
+}
+
+#review {
+    width: 100%;
+}

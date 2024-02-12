@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <!-- This link make HTML gripping -->
+    <link rel="stylesheet" href="../CSSFILE/bootstrap.min.css">
+    <link rel="stylesheet" href="../CSSFILE/detaildorm.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="../CSSFILE/review.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pridi:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="../JSFILE/homepage.js"></script>
+</head>
+<body>
+    <!-- โครงด้านบนของเว็บไซต์ -->
+    <div class="row bg-purple p-2"> 
+        <!-- แก้ใหม่แล้ว -->
+        <div class="col-4 center">
+            <img src="../img/Apartment_Logo.png" width="20%" height="95%" style="padding-bottom: 10px;">
+            <h3><b>Phayao Apartment</b></h3>
+        </div>
+        <div class="col-1 center">
+            <button class="buttn">ชุมชน</button>
+        </div>
+        <div class="col-5 center">
+            <button class="buttn">ช่วยเหลือ</button>
+        </div>
+        <div class="col-1 center" style="position: relative;">
+            <!-- Login Button -->
+            <button class="login-button buttn" onclick="window.location.href='/login'">เข้าสู่ระบบ</button>
+        </div>
+        <div class="col-1 center">
+            <!-- Register -->
+            <button class="login-button buttn" onclick="window.location.href='/register'">สมัครสมาชิก</button>
+        </div>
+    </div>
+    <!-- ส่วนของรูปภาพและรายละเอียดหอพัก -->
+    <div class="row" style="height: calc(100vh - 60px);">
+      <div class="col-5 picture">
+          <img src="../img/การ์เด้น/ปกการ์เด้น.jpg" alt="Large image" style="width: 300px;">
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0;">
+              <img src="../img/การ์เด้น/ฟอการ์เด้น.jpg" alt="Small image" style="width: 150px; height: 150px;">
+              <img src="../img/การ์เด้น/นอนการ์เด้น.jpg" alt="Small image" style="width: 150px; height: 150px;">
+              <img src="../img/การ์เด้น/ห้องการ์เด้น.jpg" alt="Small image" style="width: 150px; height: 150px;">
+          </div>
+      </div>
+      <div class="col-7 right-col">
+        <div class="row">
+            <div class="col-6 name-dorm">
+                หอพัก วิโรจน์วิวสวย
+            </div>
+        </div>  
+        <div class="row">
+            <div class="col-2 details">รายละเอียดหอพัก</div>
+            <div class="col-10" style="margin-left: 40px;">
+            <p>- ค่าห้อง 2800 บาท/เดือน</p>
+            <p>- ค่าประกัน 3000 บาท</p>
+            <p>- ค่าน้ำ 80 บาท/คน</p>
+            <p>- ค่าไฟ 7 บาท/หน่วย</p>
+            <p>- เเอร์</p> 
+            <p>- พัดลม</p>
+            <p>- เตียง 5 ฟุต</p>
+            <p>- ตู้เย็น</p>
+            <p>- โต๊ะเครื่องเเป้ง</p>
+            <p>- ห้องครัวแยก</p>
+            <p>- มีซิ้งค์ล้างจาน</p>
+            <p>- มีระเบียง</p> 
+            <p>- มีเครื่องทำน้ำอุ่น</p>
+        </div>
+            <div class="col-2 details">ระยะทาง</div>
+            <div class="col-10" style="margin-left: 40px;">
+            - 1.1 กิโลเมตร</div>
+            <div class="col-2 details">พิกัดหอพัก</div>
+            <div class="col-10" style="margin-left: 40px;">
+            - - https://shorturl.asia/VkLEM</div>
+            <div class="col-2 details">ติดต่อสอบถามได้ที่</div>
+            <div class="col-10" style="margin-left: 40px;">
+            เบอร์โทร : 0875764296
+            </div>
+        </div> 
+        <div class="row">
+            <div class="col-6 name-dorm">
+                รีวิว
+            </div>
+            <section class="reviews">
+                <div class="header">
+                  <h2>รีวิวทั้งหมด</h2>
+                  <a href="/review"><button>คอมเมนท์</button></a>
+                </div>
+                <ul>
+                  <li>
+                    <div class="review-header">
+                      <p class="username">ชื่อผู้ใช้งาน</p>
+                      <p class="rating">คะแนน: 5</p>
+                    </div>
+                    <p class="comment">สินค้าดีมาก ตรงปก จัดส่งรวดเร็ว</p>
+                  </li>
+                  <li>
+                    <div class="review-header">
+                      <p class="username">ชื่อผู้ใช้งาน</p>
+                      <p class="rating">คะแนน: 4</p>
+                    </div>
+                    <p class="comment">สินค้าดี แต่มีรอยขีดข่วนเล็กน้อย</p>
+                  </li>
+                </ul>
+              </section>
+        </div>
+    </div>
+</body>
+</html>

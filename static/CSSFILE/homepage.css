@@ -149,3 +149,14 @@ input{
     object-fit: cover;
     border-radius: 20px;
 }
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+}
+
+.in {
+    border: #CB6CE6 2px solid;
+    border-radius: 20px;
+    color: white;
+}

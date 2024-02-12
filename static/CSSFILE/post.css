@@ -1,0 +1,51 @@
+body{
+    font-family: 'Pridi', serif;
+    overflow-x: hidden;
+    background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #060505;
+    border-radius: 4px;
+  }
+
+input{
+    border-radius: 7px;
+    background-color: white;
+    width: 100%;
+}
+
+textarea {
+    border: 2px solid black;
+    border-radius: 7px;
+    background-color: white;
+    width: 100%;
+}
+
+button{
+    border-radius: 30px;
+    color: black;
+    width: 80px;
+    height: 30px;
+}
+
+.container div {
+    margin-top: 10px;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

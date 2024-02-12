@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>สร้างโพส</title>
+    <link rel="stylesheet" href="/CSSFILE/bootstrap.min.css">
+    <link rel="stylesheet" href="/CSSFILE/post.css">
+</head>
+<body>
+    <form action="#">
+        <div class="container">
+            <h1>สร้างโพสต์</h1>
+            <div>
+                <label for="ชื่อหอพัก">ชื่อหอพัก :</label> <br>
+                <input type="text" id="ชื่อหอพัก" name="ชื่อหอพัก" required>
+            </div>
+            <div>
+                <label for="ที่อยู่">ที่อยู่ :</label> <br>
+                <input type="text" id="ที่อยู่" name="ที่อยู่" required>
+            </div>
+            <div>
+                <label for="รายละเอียด">รายละเอียด :</label> <br>
+                <textarea id="รายละเอียด" name="รายละเอียด" style="height: 100px;"></textarea>
+            </div>
+            <div>
+                <label for="ช่องทางการติดต่อ">ช่องทางการติดต่อ :</label> <br>
+                <input type="text" id="ช่องทางการติดต่อ" name="ช่องทางการติดต่อ" required> 
+            </div>
+            <div>
+                <label for="ราคาห้องพัดลม">ราคาห้องพัดลม :</label> <br>
+                <input type="text" id="ราคาห้องพัดลม" name="ราคาห้องพัดลม">
+            </div>
+            <div>
+                <label for="ราคาห้องแอร์">ราคาห้องแอร์ :</label> <br>
+                <input type="text" id="ราคาห้องแอร์" name="ราคาห้องแอร์">
+            </div>
+            <div>
+                <label for="ค่าน้า">ค่าน้ำ :</label> <br>
+                <input type="text" id="ค่าน้า" name="ค่าน้า">
+            </div>
+            <div>
+                <label for="ค่าไฟ">ค่าไฟ :</label> <br>
+                <input type="text" id="ค่าไฟ" name="ค่าไฟ">
+            </div>
+            <div class="row" style="margin-top: 20px;">
+                <div class="col-3">
+                    <button onclick="window.location.href='/member'">ย้อนกลับ</button>
+                </div>
+                <div class="col-6 center">
+                    <img src="/img/Addpicture.png" width="25%">
+                </div>
+                <div class="col-3">
+                    <button type="submit" style="background-color: #CB6CE6; white-space: nowrap;">สร้างโพสต์</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

@@ -7,7 +7,6 @@
 body{
     font-family: 'Pridi', serif;
     overflow-x: hidden;
-    overflow-y: hidden;
     height: 100vh;
 }
 
@@ -83,6 +82,17 @@ input{
     align-items: center;
     padding: 0 10px;
 }
+
+.dorm-dorm{
+    background-color: #CB6CE6;
+    color: whitesmoke;
+    height: 30px;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+    margin-top: 20px;
+}
+
 
 .right-col{
     border-left: 2px solid black;
@@ -181,3 +191,5 @@ img {
     text-decoration: none;
     display: block;
 }
+
+

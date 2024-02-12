@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>รีวิวสินค้า</title>
+  <link rel="stylesheet" href="/CSSFILE/bootstrap.min.css">
+  <link rel="stylesheet" href="/CSSFILE/review.css">
+</head>
+<body>
+    <form action="#">
+        <div class="container">
+              <h1>รีวิวสินค้า</h1>
+              <section class="review-form"><p>
+                <form action="2">
+                    <div class="cont">
+                      <h4>เขียนรีวิว</h4>
+                      <button type="submit" style="background-color: #CB6CE6; white-space: nowrap;">
+                        <img src="/img/Addpicture.png" width="25%">
+                      </button>
+                    </div>
+                </form></p>
+               
+                <p><label for="username">ชื่อผู้ใช้งาน:</label>
+                <input type="text" id="username" name="username">
+                </p>
+                
+                <p>
+                  <label for="rating">คะแนน:</label>
+                  <select style="margin-left: 20px;" id="rating" name="rating">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                  </select>
+                </p>
+                
+               
+                
+                <p>
+                <label for="comment">ความคิดเห็น:</label>
+                <textarea type=""  id="comment" name="comment" rows="5"></textarea>
+                </p>
+                <form action="1">
+                  <div class="row" style="margin-top: 20px;">
+                    <div class="buttons" style="display: flex; justify-content: space-between; align-items: center;">
+                      
+                      <a href="/detaildorm"><button type="button">ยกเลิก</button></a>
+                     
+                      <button type="submit" style="background-color: #CB6CE6; white-space: nowrap;">ส่ง</button>
+                    </div>
+                  </div>
+                </form>
+              </section>
+        </div>
+    </form>
+</body>
+</html>

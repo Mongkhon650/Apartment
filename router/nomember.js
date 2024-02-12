@@ -47,7 +47,7 @@ function renderDorm(dorm) {
                     ราคา : ${dorm.rate_price} บาท/เดือน
                 </div>
                 <div class="col-md-2">
-                    <button class="detail-dorm">เพิ่มเติม</button>
+                    <button class="detail-dorm" onclick="window.location.href='/detaildorm'">เพิ่มเติม</button>
                 </div>
             </div>
         </div>
@@ -177,8 +177,13 @@ router.get("/member", (req, res) => {
       const dormsHTML = dorms.map(renderDorm).join("");
       const username = req.cookies.username;
       const firstChar = username.charAt(0);
-      const isLandlord = req.cookies.isLandlord === '1';
-      res.render("member/member", { dorms: dormsHTML, username, firstChar, isLandlord });
+      const isLandlord = req.cookies.isLandlord === "1";
+      res.render("member/member", {
+        dorms: dormsHTML,
+        username,
+        firstChar,
+        isLandlord,
+      });
     }
   });
 });
@@ -194,9 +199,21 @@ router.get("/logout", (req, res) => {
 
 //ค้นหาหอพัก
 router.get("/search", (req, res) => {
-  const query = req.query.query;
-  const sql = `SELECT dorm.dorm_id, dorm.dormName, dorm.dormDistan, dorm.rate_price, photo.picture FROM dorm LEFT JOIN photo ON dorm.dorm_id = photo.dorm_id WHERE dorm.dormName LIKE ?`;
-  pool.query(sql, [`${query}%`], (err, result) => {
+  const { query, dormitory_type, dorm_type } = req.query;
+  let sql = `SELECT dorm.dorm_id, dorm.dormName, dorm.dormDistan, dorm.rate_price, photo.picture FROM dorm LEFT JOIN photo ON dorm.dorm_id = photo.dorm_id WHERE dorm.dormName LIKE ?`;
+  let params = [`${query}%`];
+
+  if (dormitory_type) {
+    sql += " AND dorm.dormitory_type = ?";
+    params.push(dormitory_type);
+  }
+
+  if (dorm_type) {
+    sql += " AND dorm.dorm_type = ?";
+    params.push(dorm_type);
+  }
+
+  pool.query(sql, params, (err, result) => {
     if (err) {
       console.log(err);
       res.status(500).json({ msg: "Internal server error" });
@@ -241,6 +258,18 @@ router.get("/image/:id", (req, res) => {
       res.status(404).send("No image found for this dorm");
     }
   });
+});
+
+router.get("/post", (req, res) => {
+  res.render("member/post");
+});
+
+router.get("/detaildorm", (req, res) => {
+  res.render("member/detaildorm");
+});
+
+router.get("/review", (req, res) => {
+  res.render("member/review");
 });
 
 module.exports = router;
